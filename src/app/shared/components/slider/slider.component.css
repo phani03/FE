@@ -1,0 +1,6 @@
+.range-min-max{
+    display: flex;
+}
+.range-min-max span:first-child, .range-min-max span:nth-child(2) {
+    flex: 1
+}

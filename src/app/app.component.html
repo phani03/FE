@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row" *ngIf="!loading; else load">
+    <div class="col-lg-6">
+      <b>Age Slider</b>
+      <app-slider
+        [min]="limit.age.min"
+        [max]="limit.age.max"
+        [value]="Age"
+        (refresh)="reloadData($event, 'age')">
+      </app-slider>
+    </div>
+    <div class="col-lg-6">
+        <b>Experience slider</b>
+      <app-slider
+        [min]="limit.experience.min"
+        [max]="limit.experience.max"
+        [value]="Experience"
+        (refresh)="reloadData($event, 'exp')">
+      </app-slider>
+    </div>
+    <div class="col-xs-12">
+        <app-tab [actIndex]="0" [data]="Education" tabTextProperty="Course" dataProperty="College" header="Education"></app-tab>
+        <app-tab [actIndex]="0" [data]="Address" tabTextProperty="Place" dataProperty="Area" header="Contact"></app-tab>
+    </div>
+  </div>
+  <ng-template #load >
+    <div style="text-align:center"> Loading...</div>
+  </ng-template>
+</div>
+
+<app-footer></app-footer>
